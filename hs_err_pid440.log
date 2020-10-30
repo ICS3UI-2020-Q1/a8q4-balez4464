@@ -1,0 +1,96 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x00007f3be28784d0, pid=440, tid=445
+#
+# JRE version: OpenJDK Runtime Environment (11.0.8+10) (build 11.0.8+10-post-Ubuntu-0ubuntu118.04.1)
+# Java VM: OpenJDK 64-Bit Server VM (11.0.8+10-post-Ubuntu-0ubuntu118.04.1, mixed mode, sharing, tiered, compressed oops, serial gc, linux-amd64)
+# Problematic frame:
+# C  [libjimage.so+0x24d0]
+#
+# Core dump will be written. Default location: Core dumps may be processed with "/usr/share/apport/apport %p %s %c %d %P %E" (or dumping to /home/runner/a8q4-balez4464/core.440)
+#
+# If you would like to submit a bug report, please visit:
+#   https://bugs.launchpad.net/ubuntu/+source/openjdk-lts
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: Main
+
+Host: Intel(R) Xeon(R) CPU @ 2.30GHz, 4 cores, 512M, Ubuntu 18.04.5 LTS
+Time: Fri Oct 30 14:22:10 2020 UTC elapsed time: 476 seconds (0d 0h 7m 56s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007f3bdc059000):  JavaThread "Signal Dispatcher" daemon [_thread_in_vm, id=445, stack(0x00007f3be0dda000,0x00007f3be0edb000)]
+
+Stack: [0x00007f3be0dda000,0x00007f3be0edb000],  sp=0x00007f3be0ed8200,  free space=1016k
+Native frames: (J=compiled Java code, A=aot compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [libjimage.so+0x24d0]
+C  [libjimage.so+0x3131]
+C  [libjimage.so+0x35c6]  JIMAGE_FindResource+0xd6
+V  [libjvm.so+0x59097e]
+V  [libjvm.so+0x5936e0]
+V  [libjvm.so+0xd50b85]
+V  [libjvm.so+0xd4e51a]
+V  [libjvm.so+0xd51112]
+V  [libjvm.so+0x645bed]
+V  [libjvm.so+0x83f24c]
+j  jdk.internal.misc.Signal.dispatch(I)V+25 java.base@11.0.8
+v  ~StubRoutines::call_stub
+V  [libjvm.so+0x84eb09]
+V  [libjvm.so+0x84d8f5]
+V  [libjvm.so+0xbc3d2c]
+V  [libjvm.so+0xd8996f]
+V  [libjvm.so+0xd860bf]
+V  [libjvm.so+0xbd632e]
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  jdk.internal.misc.Signal.dispatch(I)V+25 java.base@11.0.8
+v  ~StubRoutines::call_stub
+
+siginfo: si_signo: 11 (SIGSEGV), si_code: 1 (SEGV_MAPERR), si_addr: 0x00007f3bd39a1a49
+
+Register to memory mapping:
+
+RAX=0x000000000005dc4d is an unknown value
+RBX=0x00007f3bdc009600 points into unknown readable memory: 50 0f 00 88 3b 7f 00 00
+RCX=0x00007f3bd390201c is an unknown value
+RDX=0x00007f3bd3922f0c is an unknown value
+RSP=0x00007f3be0ed8200 is pointing into the stack for thread: 0x00007f3bdc059000
+RBP=0x00007f3be0ed8200 is pointing into the stack for thread: 0x00007f3bdc059000
+RSI=0x00007f3bd39a1a49 is an unknown value
+RDI=0x00007f3be0ed8210 is pointing into the stack for thread: 0x00007f3bdc059000
+R8 =0x0 is NULL
+R9 =0x0000000076100fa4 is an unknown value
+R10=0x00007f3be0ed82b3 is pointing into the stack for thread: 0x00007f3bdc059000
+R11=0x00007f3be0ed8210 is pointing into the stack for thread: 0x00007f3bdc059000
+R12=0x000000000005dc4d is an unknown value
+R13=0x00007f3be0ed8290 is pointing into the stack for thread: 0x00007f3bdc059000
+R14=0x00007f3be0ed9328 is pointing into the stack for thread: 0x00007f3bdc059000
+R15=0x00007f3bdc059cb0 points into unknown readable memory: 6a 64 6b 2f 69 6e 74 65
+
+
+Registers:
+RAX=0x000000000005dc4d, RBX=0x00007f3bdc009600, RCX=0x00007f3bd390201c, RDX=0x00007f3bd3922f0c
+RSP=0x00007f3be0ed8200, RBP=0x00007f3be0ed8200, RSI=0x00007f3bd39a1a49, RDI=0x00007f3be0ed8210
+R8 =0x0000000000000000, R9 =0x0000000076100fa4, R10=0x00007f3be0ed82b3, R11=0x00007f3be0ed8210
+R12=0x000000000005dc4d, R13=0x00007f3be0ed8290, R14=0x00007f3be0ed9328, R15=0x00007f3bdc059cb0
+RIP=0x00007f3be28784d0, EFLAGS=0x0000000000010202, CSGSFS=0x002b000000000033, ERR=0x0000000000000004
+  TRAPNO=0x000000000000000e
+
+Top of Stack: (sp=0x00007f3be0ed8200)
+0x00007f3be0ed8200:   00007f3be0ed8270 00007f3be2879131
+0x00007f3be0ed8210:   0000000000000000 0000000000000000
+0x00007f3be0ed8220:   0000000000000000 0000000000000000
+0x00007f3be0ed8230:   0000000000000000 0000000000000000 
+
+Instructions: (pc=0x00007f3be28784d0)
+0x00007f3be28783d0:   49 83 c2 01 44 69 c8 93 01 00 01 41 0f b6 c0 45
+0x00007f3be28783e0:   0f b6 42 ff 44 31 c8 45 84 c0 75 e4 25 ff ff ff
+0x00007f3be28783f0:   7f 41 89 cd 48 89 d1 31 d2 41 f7 f5 49 89 f4 89
+0x00007f3be2878400:   d0 8b 34 81 48 8b 07 ff 50 20 83 f8 00 7e 41 41
+0x00007f3be2878410:   0f b6 14 24 84 d2 74 1c 0f 1f 84 00 00 00 00 00
+0x00007f3be2878420:   69 c0 93 01 00 01 48 83 c3 01 31 d0 0f b6 53 ff
+0x00007f3be2878430:   84 d2 75 ec 25 ff ff ff 7f 31 d2 41
