@@ -19,7 +19,7 @@ public class Main implements Runnable, ActionListener{
   // Method to assemble our GUI
   public void run(){
     // Creats a JFrame that is 800 pixels by 600 pixels, and closes when you click on the X
-    JFrame frame = new JFrame("Title");
+    JFrame frame = new JFrame("Factorial Calculator");
     // Makes the X button close the program
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     // makes the windows 800 pixel wide by 600 pixels tall
